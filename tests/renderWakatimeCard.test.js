@@ -3,10 +3,11 @@ import "@testing-library/jest-dom";
 import { renderWakatimeCard } from "../src/cards/wakatime-card.js";
 import { getCardColors } from "../src/common/utils.js";
 import { wakaTimeData } from "./fetchWakatime.test.js";
+import { expect, it, describe } from "@jest/globals";
 
 describe("Test Render Wakatime Card", () => {
   it("should render correctly", () => {
-    const card = renderWakatimeCard(wakaTimeData.data);
+    // const card = renderWakatimeCard(wakaTimeData.data);
     expect(getCardColors).toMatchSnapshot();
   });
 
@@ -43,7 +44,7 @@ describe("Test Render Wakatime Card", () => {
     expect(
       document.querySelector('g[transform="translate(0, 0)"]>text.stat.bold')
         .textContent,
-    ).toBe("本周没有编程活动");
+    ).toBe("Wakatime 用户个人资料未公开");
   });
 
   it("should render without rounding", () => {

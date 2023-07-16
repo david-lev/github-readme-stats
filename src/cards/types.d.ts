@@ -1,5 +1,5 @@
 type ThemeNames = keyof typeof import("../../themes/index.js");
-type RankIcon = "default" | "github";
+type RankIcon = "default" | "github" | "percentile";
 
 export type CommonOptions = {
   title_color: string;
@@ -27,6 +27,7 @@ export type StatCardOptions = CommonOptions & {
   ring_color: string;
   text_bold: boolean;
   rank_icon: RankIcon;
+  show: string[];
 };
 
 export type RepoCardOptions = CommonOptions & {
@@ -39,7 +40,7 @@ export type TopLangOptions = CommonOptions & {
   hide_border: boolean;
   card_width: number;
   hide: string[];
-  layout: "compact" | "normal" | "donut" | "pie";
+  layout: "compact" | "normal" | "donut" | "donut-vertical" | "pie";
   custom_title: string;
   langs_count: number;
   disable_animations: boolean;
